@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "label": "Hydration - 1.5L of water a day"
+    },
+    {
+        "id": 2,
+        "label": "Going to bed before 12 AM"
+    },
+    {
+        "id": 3,
+        "label": "Meditation - 10 mins"
+    },
+    {
+        "id": 4,
+        "label": "Training session"
+    },
+    {
+        "id": 5,
+        "label": "30 mins walk"
+    },
+    {
+        "id": 6,
+        "label": "Limit Instagram to 30 mins a day"
+    }, 
+    {
+        "id": 7,
+        "label": "No screen 1 hour before the bed"
+    }, 
+    {
+        "id": 8,
+        "label": "Eating min of 400g of veggies a day"
+    },
+    {
+        "id": 9,
+        "label": "1h of reading"
+    },
+    {
+        "id": 10,
+        "label": "Quality time with a loved one"
+    },
+    {
+        "id": 11,
+        "label": "Feed cats"
+    }
+]

@@ -10,6 +10,7 @@ export default function Navigation({ homeOnly }) {
       <Link href='/my-habits'>My Habits</Link>
       <Link href='/create-habit'>Create Habit</Link>
       <Link href='/my-account'>My Account</Link>
+      <Link href='/our-habits'>Our Habits</Link>
      
       </>)
       }
