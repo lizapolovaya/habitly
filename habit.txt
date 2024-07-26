@@ -1,0 +1,1 @@
+{"name":"uuuu","frequency":"sunday","priority":"medium"}

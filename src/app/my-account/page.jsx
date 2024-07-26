@@ -10,7 +10,7 @@ export default function MyAccount() {
       <button type="button">Export data</button>
       <button type="button">Restore data</button>
 
-      <Navigation homeOnly="true"/>
+      <Navigation homeOnly={true}/>
 
     </main>
   );
