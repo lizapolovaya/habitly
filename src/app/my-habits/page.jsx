@@ -16,7 +16,7 @@ export default async function MyHabits() {
       <ul role="list" className="divide-y divide-gray-100">
           {list.map((item, key) => (
             <li key={key} className="flex gap-x-4 py-5">
-              <img alt="" src={item.imageUrl} className="h-12 w-12 flex-none rounded-full bg-gray-50" />
+              <item.icon className="h-6 w-6 "/>
               <div className="min-w-0">
                 <p className="text-sm font-semibold leading-6 text-gray-900">{item.label}</p>
                 <p className="mt-1 truncate text-xs leading-5 text-gray-500">{item.priority}</p>
