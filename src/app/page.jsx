@@ -1,14 +1,16 @@
 import readDailyHabits from "@/actions/readDailyHabits";
+import Title from "@/components/Title";
 
 export default async function Home() {
   const list = await readDailyHabits()
   return (
-    <main className="flex min-h-screen flex-col justify-between p-24">
-      <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900">Home</h1>
-      </div>
+    <main className="flex min-h-screen max-w-xl flex-col items-start justify-start p-5 pl-4">
+        <Title title="Home"/>
+        <Title>Home
+          <span className="text-red-300">red</span>
+        </Title>
 
-      <ul className="divide-y divide-gray-800 max-w-md">
+      <ul className="divide-y divide-x divide-gray-200 border border-gray-200 w-full cursor-pointer rounded-md bg-white">
         {list.map((item, key) => (
           <li key={key} className="flex justify-between gap-x-6 py-5">
             <div className="flex min-w-0 gap-x-4">
@@ -17,7 +19,7 @@ export default async function Home() {
                 id={`item-${item.label}`}
                 name={`person-${item.label}`}
                 type="checkbox"
-                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                className="h-5 w-5 rounded-full hover:rounded-full border-gray-400 text-indigo-500 hover:border-indigo-600 focus:ring-indigo-600"
               />
             </div>
               <div className="min-w-0 flex-auto">

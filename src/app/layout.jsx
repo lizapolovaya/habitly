@@ -3,6 +3,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { useState } from 'react'
+import clsx from "clsx";
+
 import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessui/react'
 import {
   Bars3Icon,
@@ -14,11 +16,10 @@ import {
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import HomeContent from '@/components/HomeContent'
 import Link from "next/link";
 
 const navigation = [
-  { name: 'Home', href: '#', icon: HomeIcon, current: true },
+  { name: 'Home', href: '/', icon: HomeIcon, current: true },
   { name: 'My Habits', href:'/my-habits', icon: CalendarIcon, current: false },
   { name: 'Create Habit', href: '/create-habit', icon: FolderIcon, current: false },
   { name: 'My Account', href: '/my-account', icon: UsersIcon, current: false },
@@ -36,7 +37,7 @@ export default function RootLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={clsx(inter.className, "bg-gray-100")}>
       <div>
         <Dialog open={sidebarOpen} onClose={setSidebarOpen} className="relative z-50 lg:hidden">
           <DialogBackdrop

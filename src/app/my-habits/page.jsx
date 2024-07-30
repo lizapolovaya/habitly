@@ -3,11 +3,12 @@ import readMyHabits from "@/actions/readMyHabits";
 export default async function MyHabits() {
   const list = await readMyHabits()
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-xl font-bold">My Habits</h1>
+    <main className="flex min-h-screen flex-col items-start justify-start p-5 pl-4">
+      <h1 className="text-2xl/8 font-semibold text-zinc-950 sm:text-xl/8 dark:text-white mb-10">My Habits</h1>
 
-      <h2 className="text-md font-bold">The list of habits</h2>
-
+      
+      <h2 className="text-md font-semibold">The list of habits</h2>
+      
       {/* <ul>
         {list.map((item, index) => <div><li> {item.label} </li></div>)}
     </ul>  */}
@@ -25,8 +26,15 @@ export default async function MyHabits() {
           ))}
         </ul>
 
-
-    <button type="button">Add a new habit</button>
+        <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
+          <a
+            href="#"
+            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Add a new habit
+          </a>
+      </div>
+    {/* <button type="button">Add a new habit</button> */}
 
     </main>
   );
