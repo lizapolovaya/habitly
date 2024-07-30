@@ -4,6 +4,7 @@ import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 import Image from "next/image";
 import Link from "next/link";
 import addHabit from "@/actions/addHabit";
+import Title from "@/components/Title";
 import updateHabit from "@/actions/updateHabit";
 
 
@@ -11,7 +12,7 @@ export default function CreateHabit() {
 
   return (
     <main className="flex min-h-screen flex-col items-start justify-start p-5 pl-4">
-      <h1 className="text-2xl/8 font-semibold text-zinc-950 sm:text-xl/8 dark:text-white mb-10">Create Habit</h1>
+       <Title>Create Habit</Title>
 
       <h2 className="mb-5">Fillout the form below to create a new habit:</h2>
 

@@ -1,11 +1,13 @@
 import readOurHabits from "@/actions/readOurHabits";
+import Title from "@/components/Title";
 
 
 export default async function OurHabits() {
   const list = await readOurHabits()
   return (
     <main className="flex min-h-screen flex-col items-start justify-start p-5 pl-4">
-      <h1 className="text-2xl/8 font-semibold text-zinc-950 sm:text-xl/8 dark:text-white mb-10">Our Habits</h1>
+             <Title>Our Habits</Title>
+
 
       <h2>The list of our habits</h2>
 
