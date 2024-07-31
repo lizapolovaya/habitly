@@ -11,22 +11,25 @@ import updateHabit from "@/actions/updateHabit";
 export default function CreateHabit() {
 
   return (
-    <main className="flex min-h-screen flex-col items-start justify-start p-5 pl-4">
+    <main className="flex min-h-screen max-w-xl flex-col items-start justify-start p-5 pl-4">
+      
        <Title>Create Habit</Title>
 
-      <h2 className="mb-5">Fillout the form below to create a new habit:</h2>
+      <h2 className="text-md font-semibold">Fillout the form below to create a new habit:</h2>
+    <div className="overflow-hidden rounded-lg bg-white shadow">
+     <div className="px-4 py-5 sm:p-6">
 
-      <button onClick={(event) => {
-        console.log(event.target)
-      }} onMouseLeave={(event) => {
-        console.log(event.target)
-      }}>Liza</button>
+            <button onClick={(event) => {
+              console.log(event.target)
+            }} onMouseLeave={(event) => {
+              console.log(event.target)
+            }}>Liza</button>
 
-      <input type="button" value="Dan" onMouseEnter={(event) => {
-        console.log(event.target)
-      }} onClick={(event) => {
-        console.log(event.target)
-      }} />
+            <input type="button" value="Dan" onMouseEnter={(event) => {
+              console.log(event.target)
+            }} onClick={(event) => {
+              console.log(event.target)
+            }} />
 
        <form method="POST" onSubmit={async function (event){
           event.preventDefault()
@@ -123,6 +126,8 @@ export default function CreateHabit() {
            </div>
 
        </form>
+      </div>
+    </div>
 
     </main>
   );

@@ -17,13 +17,15 @@ const ourHabits = [
         "id": 1,
         "label": "Hydration - 1.5L of water a day",
         "user": "Liza",
-        "icon": CheckCircleIcon
+        "icon": CheckCircleIcon,
+        "priority": "Low"
     },
     {
         "id": 2,
         "label": "Going to bed before 12 AM",
         "user": "Dan",
-        "icon": CheckCircleIcon
+        "icon": CheckCircleIcon,
+        "priority": "Medium"
     },
     {
         "id": 3,
@@ -36,6 +38,7 @@ const ourHabits = [
         "label": "Training session",
         "user": "Dan",
         "icon": CheckCircleIcon
+
     },
     {
         "id": 5,
