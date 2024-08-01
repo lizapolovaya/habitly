@@ -16,8 +16,8 @@ export default async function Home() {
       {list.map((item, key) => (
           <ListItem item={item} key={key}>
             <input
-                id={`item-${item.label}`}
-                name={`person-${item.label}`}
+                id={`item-${item.name}`}
+                name={`person-${item.name}`}
                 type="checkbox"
                 className="h-5 w-5 rounded-full hover:rounded-full border-gray-400 text-indigo-500 hover:border-indigo-600 focus:ring-indigo-600"
               />

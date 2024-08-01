@@ -9,14 +9,14 @@ export default async function MyHabits() {
   return (
     <main className="min-h-screen max-w-xl p-5 pl-4">
       <Title>My Habits
-        <CreateButton/>
+        <CreateButton href="/create-my-habit"></CreateButton>
       </Title>     
       <h2 className="text-md font-semibold">The list of my habits</h2>
 
       <List>
         {list.map((item, key) => (
           <ListItem item={item} key={key}>
-            <item.icon className="h-6 w-6 "/>
+            {/* <item.icon className="h-6 w-6 "/> */}
           </ListItem>
         ))}
       </List>

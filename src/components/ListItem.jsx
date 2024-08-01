@@ -8,7 +8,7 @@ export default function ListItem({item, children}) {
                 {children}
             </div>
               <div className="min-w-0 flex-auto">
-                <p className="text-sm font-semibold leading-6 text-black">{item.label}</p>
+                <p className="text-sm font-semibold leading-6 text-black">{item.name}</p>
                 {item.priority && (   
                     <span className={clsx(
                         "inline-flex items-center rounded-md px-1.5 py-0.5 text-xs font-medium",

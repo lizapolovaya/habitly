@@ -32,7 +32,7 @@ import { HeartIcon } from "@heroicons/react/24/solid";
 const navigation = [
   { name: 'Home', href: '/', icon: HomeIcon, current: true },
   { name: 'My Habits', href:'/my-habits', icon: CalendarIcon, current: false },
-  //{ name: 'Create Habit', href: '/create-habit', icon: FolderIcon, current: false },
+  //{ name: 'Create Habit', href: '/create-my-habit', icon: FolderIcon, current: false },
   { name: 'Update Habit', href: '/update-habits', icon: ChartPieIcon, current: false },
   { name: 'Our Habits', href: '/our-habits', icon: DocumentDuplicateIcon, current: false },
   { name: 'My Account', href: '/my-account', icon: UsersIcon, current: false }
@@ -40,7 +40,7 @@ const navigation = [
 ]
 
 const userNavigation = [
-  { name: 'Your profile', href: '#' },
+  { name: 'Your profile', href: '/my-account' },
   { name: 'Sign out', href: '#' },
 ]
 
