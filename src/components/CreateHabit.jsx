@@ -1,4 +1,5 @@
 import { UserCircleIcon } from "@heroicons/react/24/solid"
+import addHabit from "@/actions/addHabit"
 
 export default function CreateHabit({single}) {
     return(
@@ -69,7 +70,8 @@ export default function CreateHabit({single}) {
               </select>
             </div>
           </div>
-
+        
+        {single && <input type="hidden" id="habowner" value="Liza"/>}
         {!single && 
           <div>
             <label htmlFor="habowner" className="block text-sm font-medium leading-6 text-gray-900 mt-7">
