@@ -1,7 +1,9 @@
 "use server"
-import fs from "fs/promises";
 
-export default async function readHabit() {
-    const habits = await fs.readFile("src/data/myHabits.json", "UTF-8")
-    return JSON.parse(habits)
+import readMyHabits from "./readMyHabits";
+
+export default async function readHabit(id) {
+    const habits = await readMyHabits()
+    const habit = habits.find(item => item.id === id)
+    return habit
 }

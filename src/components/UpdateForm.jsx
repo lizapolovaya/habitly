@@ -1,45 +1,112 @@
 "use client"
 
+import { UserCircleIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
+import updateHabit from "@/actions/updateHabit";
+
 export default function UpdateForm({habit}) {
-    console.log(habit)
-    return (
-        <form method="POST" onSubmit={async function (event){
-            event.preventDefault()
-            const name = event.target.querySelector("#habname").value
-            const frequency = event.target.querySelector("#frequency").value
-            const priority = event.target.querySelector("#priority").value
-            console.log(priority)
-            await updateHabit(name, frequency, priority)
-         }}>
+  const [name, setName] = useState(habit.name)
+  const [frequency,  setFrequency] = useState(habit.frequency)
+  const [priority, setPriority] = useState(habit.priority)
+  const [user, setUser] = useState(habit.user)
+  return (
+    <form method="POST" onSubmit={async function (event){
+      event.preventDefault()
+      await updateHabit(name, frequency, priority, user)
+    }}>
   
-          <label htmlFor="habname">Habit name:</label>
-          <input type="text" id="habname" name="habname" value={habit.name} required/><br></br>
+      <div>
+        <label htmlFor="habname" className="block text-sm font-medium leading-6 text-gray-900">
+          Habit name:
+        </label>
+          <div className="mt-2">
+            <input
+              id="habname"
+              name="habname"
+              type="text"
+              onChange={event => setName(event.target.value)}
+              value={name}
+              required
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+      </div>
           
+      <div>
+        <label htmlFor="frequency" className="block text-sm font-medium leading-6 text-gray-900 mt-7">
+          Select how often you want to do it:
+        </label>
+          <div className="mt-2">
+            <select
+              id="frequency"
+              name="frequency"
+              onChange={event => setFrequency(event.target.value)}
+              multiple
+              required
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+            >
+                <option value="monday" selected={frequency === "monday"}>1</option>
+                <option value="tuesday" selected={frequency === "tuesday"}>2</option>
+                <option value="wednesday" selected={frequency === "wednesday"}>3</option>
+                <option value="thursday" selected={frequency === "thursday"}>4</option>
+                <option value="friday" selected={frequency === "friday"}>5</option>
+                <option value="saturday" selected={frequency === "saturday"}>6</option>
+                <option value="sunday" selected={frequency === "sunday"}>7</option>
+            </select>
+          </div>
+      </div>
   
-          <label htmlFor="frequency">Select how often you want to do it:</label>
-          <select name="frequency" id="frequency" value={habit.frequency} multiple required>
-            <option value="monday">1</option>
-            <option value="tuesday">2</option>
-            <option value="wednesday">3</option>
-            <option value="thursday">4</option>
-            <option value="friday">5</option>
-            <option value="saturday">6</option>
-            <option value="sunday">7</option>
-          </select>
+
+      <div>
+        <label htmlFor="priority" className="block text-sm font-medium leading-6 text-gray-900 mt-7">
+          Select how important this habit is:
+        </label>
+          <div className="mt-2">
+            <select
+              id="priority"
+              name="priority"
+              onChange={event => setPriority(event.target.value)}
+              value={priority}
+              required
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+            >
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+          </div>
+      </div>
+
+      <input type="hidden" id="habowner" value="Liza"/>
+
+      <div>
+        <label htmlFor="emoji" className="block text-sm font-medium leading-6 text-gray-900 mt-7">
+          Select an emoji for your habit:
+        </label>
+          <div className="mt-2 flex items-center gap-x-3">
+            <UserCircleIcon aria-hidden="true" className="h-12 w-12 text-gray-300" />
+              <button
+                type="button"
+                className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+              >
+                Update
+              </button>
+          </div>
+      </div>
+            
+      <div className="mt-6 flex items-center justify-end gap-x-6">
+        <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+          Update
+        </button>
+      </div>
   
-          <label htmlFor="priority">Select how important this habit is:</label>
-          <select name="priority" id="priority" value={habit.priority} required>
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
-            <option value="low">Low</option>
-          </select>
-  
-          <label htmlFor="emoji">Select an emoji for your habit:</label>
-          
-  
-          <input type="submit" value="Create"/>
-  
-         </form>
+    </form>
   
     );
   }

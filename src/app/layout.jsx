@@ -33,7 +33,7 @@ const navigation = [
   { name: 'Home', href: '/', icon: HomeIcon, current: true },
   { name: 'My Habits', href:'/my-habits', icon: CalendarIcon, current: false },
   //{ name: 'Create Habit', href: '/create-my-habit', icon: FolderIcon, current: false },
-  { name: 'Update Habit', href: '/update-habit', icon: ChartPieIcon, current: false },
+  //{ name: 'Update Habit', href: '/update-habit', icon: ChartPieIcon, current: false },
   { name: 'Our Habits', href: '/our-habits', icon: DocumentDuplicateIcon, current: false },
   { name: 'My Account', href: '/my-account', icon: UsersIcon, current: false }
 
