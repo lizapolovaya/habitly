@@ -9,7 +9,7 @@ export default async function MyHabits() {
   return (
     <main className="min-h-screen max-w-xl p-5 pl-4">
       <Title>My Habits
-        <CreateButton href="/create-my-habit"></CreateButton>
+        <CreateButton href="/create-habit/my"></CreateButton>
       </Title>     
       <h2 className="text-md font-semibold">The list of my habits</h2>
 

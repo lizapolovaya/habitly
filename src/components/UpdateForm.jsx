@@ -12,7 +12,7 @@ export default function UpdateForm({habit}) {
   return (
     <form method="POST" onSubmit={async function (event){
       event.preventDefault()
-      await updateHabit(name, frequency, priority, user)
+      await updateHabit({id: habit.id, name, frequency, priority, user})
     }}>
   
       <div>

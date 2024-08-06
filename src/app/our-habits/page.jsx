@@ -11,7 +11,7 @@ export default async function OurHabits() {
     <main className="min-h-screen max-w-xl p-5 pl-4">   
       <Title>
         Our Habits
-        <CreateButton href="/create-our-habit"></CreateButton>
+        <CreateButton href="/create-habit/our"></CreateButton>
       </Title>
       <h2 className="text-md font-semibold">The list of our habits</h2>
       <List>
