@@ -16,7 +16,7 @@ export default async function OurHabits() {
       <h2 className="text-md font-semibold">The list of our habits</h2>
       <List>
         {list.map((item, key) => (
-          <ListItem item={item} key={key}>
+          <ListItem item={item} key={key} type="our">
             {/* <item.icon className="h-6 w-6 "/> */}
           </ListItem>
         ))}

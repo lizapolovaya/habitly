@@ -13,7 +13,7 @@ export default async function UpdateHabit({params}) {
       <div className="overflow-hidden rounded-lg bg-white shadow ">
         <div className="px-6 py-8 sm:p-8">
 
-          <UpdateForm habit={habit}/>
+          <UpdateForm habit={habit} single={params.type === "my"}/>
         
         </div>
       </div>

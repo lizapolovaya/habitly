@@ -15,7 +15,7 @@ export default async function MyHabits() {
 
       <List>
         {list.map((item, key) => (
-          <ListItem item={item} key={key}>
+          <ListItem item={item} key={key} type="my">
             {/* <item.icon className="h-6 w-6 "/> */}
           </ListItem>
         ))}

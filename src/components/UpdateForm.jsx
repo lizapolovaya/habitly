@@ -4,7 +4,7 @@ import { UserCircleIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import updateHabit from "@/actions/updateHabit";
 
-export default function UpdateForm({habit}) {
+export default function UpdateForm({habit, single}) {
   const [name, setName] = useState(habit.name)
   const [frequency,  setFrequency] = useState(habit.frequency)
   const [priority, setPriority] = useState(habit.priority)
@@ -77,7 +77,26 @@ export default function UpdateForm({habit}) {
           </div>
       </div>
 
-      <input type="hidden" id="habowner" value="Liza"/>
+      {/* <input type="hidden" id="habowner" value="Liza"/> */}
+      {single && <input type="hidden" id="habowner" value="Liza"/>}
+      {!single && 
+      <div>
+        <label htmlFor="habowner" className="block text-sm font-medium leading-6 text-gray-900 mt-7">
+          Select the habit owner:
+        </label>
+        <div className="mt-2">
+          <select
+            id="habowner"
+            name="habowner"
+            required
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+          >
+            <option value="Liza">Liza</option>
+            <option value="Dan">Dan</option>
+          </select>
+        </div>
+      </div>
+  }
 
       <div>
         <label htmlFor="emoji" className="block text-sm font-medium leading-6 text-gray-900 mt-7">

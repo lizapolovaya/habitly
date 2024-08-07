@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import UpdateButton from "./UpdateButton";
 
-export default function ListItem({item, children}) {
+export default function ListItem({item, children, type}) {
     return (
         <li className="flex justify-between gap-x-6 py-5">
             <div className="flex min-w-0 gap-x-4">
@@ -31,7 +31,7 @@ export default function ListItem({item, children}) {
                     )}
                 </div>
             </div>
-            <UpdateButton className="self-center" item={item}/>
+            <UpdateButton className="self-center" item={item} type={type}/>
         </li>
     )
 }
