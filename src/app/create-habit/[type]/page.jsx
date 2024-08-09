@@ -1,6 +1,6 @@
 "use client"
 
-import CreateHabit from '@/components/CreateHabit';
+import HabitForm from "@/components/HabitForm";
 import Title from "@/components/Title";
 
 export default function CreateMyHabit({params}) {
@@ -13,9 +13,9 @@ export default function CreateMyHabit({params}) {
         <h2 className="text-md font-semibold">Fillout the form below to create a new habit:</h2>
         <div className="overflow-hidden rounded-lg bg-white shadow ">
         <div className="px-6 py-8 sm:p-8">
-        <CreateHabit single={params.type === "my"}>
+        <HabitForm single={params.type === "my"}>
   
-        </CreateHabit>
+        </HabitForm>
   
         </div>
         </div>

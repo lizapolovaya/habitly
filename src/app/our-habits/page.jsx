@@ -4,7 +4,6 @@ import Title from "@/components/Title";
 import List from "@/components/List";
 import CreateButton from "@/components/CreateButton";
 
-
 export default async function OurHabits() {
   const list = await readOurHabits()
   return (

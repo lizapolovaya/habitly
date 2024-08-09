@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { useState } from 'react'
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 
 import { Dialog, 
   DialogBackdrop, 
@@ -30,12 +31,12 @@ import Link from "next/link";
 import { HeartIcon } from "@heroicons/react/24/solid";
 
 const navigation = [
-  { name: 'Home', href: '/', icon: HomeIcon, current: true },
-  { name: 'My Habits', href:'/my-habits', icon: CalendarIcon, current: false },
+  { name: 'Home', href: '/', icon: HomeIcon },
+  { name: 'My Habits', href:'/my-habits', icon: CalendarIcon },
   //{ name: 'Create Habit', href: '/create-my-habit', icon: FolderIcon, current: false },
   //{ name: 'Update Habit', href: '/update-habit', icon: ChartPieIcon, current: false },
-  { name: 'Our Habits', href: '/our-habits', icon: DocumentDuplicateIcon, current: false },
-  { name: 'My Account', href: '/my-account', icon: UsersIcon, current: false }
+  { name: 'Our Habits', href: '/our-habits', icon: DocumentDuplicateIcon },
+  { name: 'My Account', href: '/my-account', icon: UsersIcon }
 
 ]
 
@@ -52,6 +53,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const path = usePathname()
+
+  const isCurrentItem = (href) => {
+    if(href === "/") return path === href
+    return path.includes(href)
+  }
+
   return (
     <html lang="en">
       <body className={clsx(inter.className, "bg-gray-100")}>
@@ -96,7 +104,7 @@ export default function RootLayout({ children }) {
                         <Link
                           href={item.href}
                           className={classNames(
-                            item.current
+                            isCurrentItem(item.href)
                               ? 'bg-gray-50 text-indigo-600'
                               : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600',
                             'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
@@ -105,7 +113,7 @@ export default function RootLayout({ children }) {
                           <item.icon
                             aria-hidden="true"
                             className={classNames(
-                              item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600',
+                              isCurrentItem(item.href) ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600',
                               'h-6 w-6 shrink-0',
                             )}
                           />
